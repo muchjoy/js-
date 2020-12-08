@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 从键盘输入小明的期末成绩;
+           当成绩为100时,奖励一辆BMW
+           当成绩[80-90]时 '奖励一台iphone15s'
+           当成绩为[60-80]时 '奖励一本参考书'
+           其他时 什么也没有
+
+       */
+
+        // 将prompt放入一个循环中
+        while (true) {
+            //score就是小明的期末考试成绩
+            var score = prompt("请输入小明的期末成绩");
+            //判断用户输入的值是否合法
+            if (score >= 0 && score <= 100) {
+                //满足该条件则证明用户的输入合法，退出循环
+                break;
+            }
+            alert("请输入有效的分数")
+
+        }
+
+
+
+
+        if (score > 100 || score < 0 || isNaN(score)) {
+            alert("拉出去毙了")
+        } else {
+            if (score == 100) {
+                alert("宝马一辆");
+            } else if (score >= 80) {
+                alert("手机");
+            } else if (score >= 60) {
+                alert("参考书一本");
+            } else {
+                alert("皮带肉丝")
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

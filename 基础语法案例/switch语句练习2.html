@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            对于成绩大于60分的,输出合格,低于60分,输出不合格
+
+        */
+        var a = +prompt("请输入成绩");
+        // if (isNaN(a)) {
+        //     alert("拖出去毙了");
+        // } else {
+        //     if (a >= 60) {
+        //         alert("合格");
+        //     } else {
+        //         alert("不合格");
+        //     }
+        // }
+
+        switch (true) {
+            case a >= 60:
+                alert("合格");
+                break;
+            default:
+                alert("不合格");
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

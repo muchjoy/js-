@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            运算符也叫操作符
+            通过运算符可以对一个或者多个值进行运算
+            比如: typeof就是运算符,可以来获得一个值的类型
+                它会将该值的类型以字符串形式返回
+
+
+            算数运算符
+                    当对非Number类型值进行运算时.会将这些值转换为Number然后进行计算
+                    任何值和NaN做运算时都是NaN
+
+                +       +可以对两个值进行加法运算,并将结果返回
+                        如果对两个字符串进行加法运算,则会做拼串,会将两个字符串拼接为一个字符串
+                        任何值和字符串做加法运算,都会先转换为字符串,然后在拼串操作
+                        我们可以利用这一特点,来将一个任意的数据类型转换为String
+                            我们只需要为任意的数据类型+一个"" 即可将其转换为String
+                            这是一种隐式的类型转换,由浏览器自动完成,实际上它也是调用了String()函数
+
+                -       -可以对两个值进行减法运算
+                        字符串转换成Number在计算
+
+                *       -乘法
+                        
+                /       除法
+
+
+                %         取模运算(取余数)
+        */
+        var c = 123;
+        // c = c + "";
+
+        // console.log(typeof c);
+        // console.log(c);
+
+        // console.log("c=" + c);
+
+        //练习
+
+        a = 1 + 2 + "3";    //"33"
+
+        a = "1" + 2 + 3;   //"123"
+
+
+        // 任何值和NaN运算都是NaN
+        //         任何值做 - * / 运算都会自动转换为Nubmer  我们可以通过为一个值-0 *1 /1 来将其转换为Number
+        var d = "123";
+        d = d - 0;
+
+        // 除法取余数
+        d = 9 % 3;
+        d = 9 % 4;
+        d = 9 % 5;
+        d = 15 % 7;
+
+
+
+        console.log("d=" + d);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

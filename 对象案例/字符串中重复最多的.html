@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = 'dssadwgagsdasasasdas'
+        var obj = {};
+        for (var i = 0; i < arr.length; i++) {
+            var char = arr[i]
+            if (obj[char]) {
+                obj[char]++
+            } else {
+                obj[char] = 1
+            };
+        };
+        console.log(obj); 
+        var max = 0;
+        var res = '';
+        for (var k in obj) {
+            if (obj[k] > max) {
+                max = obj[k]
+                res = k
+            };
+        };
+        console.log(max);
+        console.log(res);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

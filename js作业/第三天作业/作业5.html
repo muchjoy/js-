@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 5.首先要求用户输入班级人数，之后依次输入学生的成绩，最后打印出该班级总的成绩以及平均成绩。
+
+        var num = +prompt("请输入人数");
+        var sum = 0;
+        for (var i = 1; i <= num; i++) {
+            var score = +prompt("请输入成绩")
+            sum += score;
+        }
+        console.log(sum);
+
+        var agv = sum / num;
+        console.log(agv);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

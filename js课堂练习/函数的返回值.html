@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // function fun(sum, num1, num2) {
+        //     for (var i = num1; i <= num2; i++) {
+        //         sum += i
+        //     }
+        //     return sum;
+        // }
+        // console.log(fun(0, 1, 100))
+
+        var arr = [1, 2, 3, 4, 5]
+        function fun2(max, min, maxIndex, minIndex, arr) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i]
+                    maxIndex = i
+                }
+                if (arr[i] < min) {
+                    min = arr[i]
+                    minIndex = i
+                }
+                // return (max, min, maxIndex, minIndex, arr)
+                
+            }
+        }
+        console.log(fun2(arr[0], arr[0], 0, 0, arr))
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

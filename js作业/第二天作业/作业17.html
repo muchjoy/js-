@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  存取款机：
+          用户卡里有100元
+        弹出输入框 当用户输入存钱 在弹出输入框 输入存款金额  alert（显示余额）
+        当输入取钱 用余额 - 取款金额 如果小于0 则提示用户"哥没了~" 则正常相减 在显示余额 */
+
+        var n1 = prompt("请问要什么服务");
+
+        switch (n1) {
+            case "存钱":
+                var my = +prompt("请输入存款金额");
+                alert("余额还剩 :" + (my + 100));
+                break;
+            case "取钱":
+                var qu = +prompt("请输入取款金额");
+                if (100 - qu < 0) {
+                    alert("哥真没了");
+                } else {
+                    alert("剩余余额" + (100 - qu));
+                }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

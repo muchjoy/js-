@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="ldh">邓紫棋</button>
+    <button id="zxy">我</button>
+    <br>
+    <img src="images/2.jpg" alt="" title="邓紫棋">
+
+</body>
+<script>
+
+    //获取
+    let ldh = document.getElementById("ldh")
+    let zxy = document.getElementById("zxy");
+    let img = document.querySelector("img");
+    ldh.onclick = function () {
+        img.src = "images/2.jpg"
+        img.title = ldh.innerText
+    }
+    zxy.onclick = function () {
+        img.src = "images/img.jpg"
+        img.title = zxy.innerText
+
+    }
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>我是原来的li1</li>
+        <li>我是原来的li2</li>
+        <li>我是原来的li3</li>
+    </ul>
+    <div>我是div</div>
+</body>
+<script>
+    $(function () {
+        let li = $("<li>我是后创建的</li>");
+        // li.appendTo("ul")
+        // $("ul").append(li)
+
+        // li.prependTo($("ul"))
+        // $("ul").prepend(li)
+
+        let div = $("div").clone();
+
+        div.appendTo($("ul"));
+
+        // li.remove();
+
+        // $("ul").before(li)
+        $("ul").before($("div"))
+
+
+
+
+    })
+</script>
+
+</html>

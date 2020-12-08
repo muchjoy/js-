@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 12.***var arr = [4, 0, 7, 9, 7, 0, 2, 6, 2, 3, 1, 0];数组去重；把重复的元素去掉，生成一个新数组!!
+
+        // var arr = [4, 0, 7, 9, 7, 0, 2, 6, 2, 3, 1, 0];
+
+        // for (var i = 0; i < arr.length; i++) {
+        //     for (var j = i + 1; j < arr.length; j++) {
+        //         if (arr[i] == arr[j]) {
+        //             arr.splice(j, 1);
+        //             j--;
+        //         }
+        //     }
+        // }
+        // console.log(arr)
+
+        // //方法二
+        // var arr = [4, 0, 7, 9, 7, 0, 2, 6, 2, 3, 1, 0];
+        // arr.sort(function (a, b) {
+        //     return a - b;
+        // });
+        // // console.log(arr);
+        // var arr1 = [];
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (arr[i] != arr[i + 1]) {
+        //         arr1.push(arr[i]);
+        //     }
+        // }
+        // console.log(arr1)
+
+        //方法三
+        var arr = [4, 0, 7, 9, 7, 0, 2, 6, 2, 3, 1, 0];
+        var arr1 = []
+        for (var i = 0; i < arr.length; i++) {
+            if (arr1.indexOf(arr[i]) == -1) {
+                arr1.push(arr[i])
+            }
+        }
+        console.log(arr1)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

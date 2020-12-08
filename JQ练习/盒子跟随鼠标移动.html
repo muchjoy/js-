@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+
+        .spig {
+            display: block;
+            width: 175px;
+            height: 246px;
+            position: absolute;
+            bottom: 300px;
+            left: 180px;
+            z-index: 9999;
+        }
+
+        #message {
+            color: #191919;
+            border: 1px solid #c4c4c4;
+            background: #ddd;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            min-height: 1em;
+            padding: 5px;
+            top: -45px;
+            position: absolute;
+            text-align: center;
+            width: auto !important;
+            z-index: 10000;
+            -moz-box-shadow: 0 0 15px #eeeeee;
+            -webkit-box-shadow: 0 0 15px #eeeeee;
+            border-color: #eeeeee;
+            box-shadow: 0 0 15px #eeeeee;
+            outline: none;
+            font-size: 0.16rem
+        }
+
+        .mumu {
+            width: 1.75rem;
+            height: 2.46rem;
+            cursor: move;
+            background: url(https://blog-static.cnblogs.com/files/ggymx/gril.gif) no-repeat;
+            background-size: 100% 100%
+        }
+    </style>
+    <script src="jQuery.js"></script>
+    <script>
+        //入口函数
+        $(function () {
+            $(document).bind("mousemove", function (e) {
+                $("div").css({
+                    left: e.pageX,
+                    top: e.pageY
+                })
+            })
+        })
+    </script>
+    <!--点击爱心特效-->
+    <script type="text/javascript">
+        //需要jquery插件
+        /* 鼠标特效 */
+        var a_idx = 0;
+        jQuery(document).ready(function ($) {
+            $("body").click(function (e) {
+                var a = new Array("❤不做咸鱼！❤", "❤拒绝懒惰！❤", "❤想做吃货❤", "❤拒绝单身❤", "❤向大佬学习❤", "❤扶我起来~❤", "❤come on❤", "❤一直在路上~❤", "❤累了~❤", "❤再趴一会❤", "❤66666❤", "❤高兴的飞起*****❤");
+                var $i = $("<span></span>").text(a[a_idx]);
+                a_idx = (a_idx + 1) % a.length;
+                var x = e.pageX,
+                    y = e.pageY;
+                $i.css({
+                    "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+                    "top": y - 20,
+                    "left": x,
+                    "position": "absolute",
+                    "font-weight": "bold",
+                    "color": "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"
+                });
+                $("body").append($i);
+                $i.animate({
+                    "top": y - 180,
+                    "opacity": 0
+                },
+                    1500,
+                    function () {
+                        $i.remove();
+                    });
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <div>
+
+    </div>
+</body>
+
+
+
+</html>

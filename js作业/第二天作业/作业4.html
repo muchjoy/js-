@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 要求用户输入用户名和密码  如果用户名是admin 密码是888 弹出登录成功之后，再次弹出用户输入姓名,年龄,性别 打印在文档
+
+        var n1 = prompt("请输入用户名");
+        var n2 = +prompt("请输入密码");
+        if (n1 == "admin" && n2 == 888) {
+            alert("登陆成功");
+
+            var ming = prompt("请输入姓名");
+            var age = prompt("请输入年龄");
+            var gender = prompt("请输入性别");
+
+            document.write("姓名 :" + ming + "<br />" + "年龄 :" + age + "<br />" + "性别 :" + gender + "<br />");
+        } else {
+            alert("重新输入");
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

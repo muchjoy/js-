@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/z.gif" alt="">
+    <p>早上好</p>
+</body>
+<script>
+    let img = document.querySelector("img");
+    let p = document.querySelector("p");
+    let date = new Date();
+    let h = date.getHours();
+    console.log(h)
+    if (h < 12) {
+        img.src = "images/z.gif"
+        p.innerText = "早上好"
+    } else if (h < 18) {
+        img.src = "images/x.gif"
+        p.innerText = "下午好"
+    } else {
+        img.src = "images/w.gif"
+        p.innerText = "晚上好"
+    }
+</script>
+
+</html>

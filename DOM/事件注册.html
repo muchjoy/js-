@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>点我</button>
+    <button>点我1</button>
+</body>
+<script>
+    let btn = document.querySelectorAll("button");
+    console.log(btn[0])
+    btn[0].addEventListener('click', function () {
+        alert(1);
+    }, false);
+    btn[0].addEventListener('click', function () {
+        alert(2);
+    }, false)
+</script>
+
+</html>

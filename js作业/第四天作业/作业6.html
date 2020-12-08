@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 6.弹出5次输入框  把每次的值存储到数组里面然后排序从大到小排序（冒泡排序）
+        var arr = [];
+
+        for (var i = 0; i < 5; i++) {
+            var num = prompt("请输入数字");
+            arr.push(num)
+        }
+        // console.log(arr);
+
+        var res = 0;
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    res = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = res
+                }
+            }
+        }
+        console.log(arr)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

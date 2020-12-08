@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		/* var i = prompt("请输入一个三位数");
+		 var bai = parseInt(i/100);   //百位
+		 var shi = parseInt((i-bai*100)/10); 
+		 var ge = i-bai*100-shi*10;
+		
+		 console.log(bai + shi + ge); */
+
+		//第二个
+		var i = prompt("请输入一个三位数");
+		var bai = parseInt(i / 100);
+		var shi = parseInt((i % 100) / 10);
+		var ge = i % 10;
+		if (!isNaN(i) && i >= 100 && i.length == 3) {
+			alert(ge + shi + bai);
+		} else {
+			alert("重新输入")
+		}
+
+
+
+
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

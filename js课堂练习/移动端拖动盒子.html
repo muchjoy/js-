@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    //获取元素
+    let div = document.querySelector("div");
+    //设置一个变量用来保存初始值
+    let stratX = 0;
+    let stratY = 0;
+    //设置一个变量用来保存盒子移动的值
+    let moveX = 0;
+    let moveY = 0;
+    //设置一个变量用来保存盒子上一次的位置
+    let x = 0;
+    let y = 0;
+    //绑定事件
+    div.addEventListener("touchstart", function (e) {
+        //获取盒子初始位置
+        stratX = e.targetTouches[0].pageX;
+        stratY = e.targetTouches[0].pageY;
+        // console.log(stratX);
+
+    });
+    div.addEventListener("touchmove", function (e) {
+        //获取盒子移动后的距离
+        //盒子移动后的位置  减去 盒子初始的位置坐标   
+        moveX = e.targetTouches[0].pageX - stratX;
+        moveY = e.targetTouches[0].pageY - stratY;
+        // console.log(moveX)
+
+
+        //将盒子后的距离加上盒子当前的距离
+        this.style.left = `${x + moveX}px`;
+        this.style.top = `${y + moveY}px`;
+    })
+    div.addEventListener("touchend", function () {
+        //当停止触摸时,记录当前盒子的位置
+        x += moveX;
+        y += moveY
+
+    })
+
+</script>
+
+</html>

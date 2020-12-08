@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // var obj = {
+        //     name: "旺财",
+        //     age: 5,
+        //     gender: "公",
+        //     hobby: function () {
+        //         console.log("吃喝玩乐")
+        //     }
+
+        // };
+        // console.log(obj.name);
+        // obj.hobby();
+
+        // var obj = {
+        //     add: function () {
+        //         var sum = 0;
+        //         for (var i = 0; i <= 100; i++) {
+        //             if (i % 2 == 0) {
+        //                 sum += i
+        //             }
+
+        //         }
+        //         return sum;
+        //     },
+        //     arrAdd: function () {
+        //         var arr = [1, 2, 3, 4, 5];
+        //         var num = 0;
+        //         for (var i = 0; i < arr.length; i++) {
+        //             num += arr[i]
+        //         }
+        //         return num;
+        //     }
+        // }
+        // console.log(obj.add());
+        // console.log(obj.arrAdd());
+
+
+        function Person(name, age, gender) {
+            this.name = name;
+            this.age = age;
+            this.gender = gender
+        };
+        var p = new Person("高翔", 20, "男");
+        for (var k in p) {
+            console.log(k);
+            console.log(p[k])
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

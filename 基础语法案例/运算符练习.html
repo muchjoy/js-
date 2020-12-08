@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var a = "你好" + "在吗";
+        a = 123 + "你好";
+
+
+
+        var a = 123 - NaN;
+
+        a = "123" - "456";
+
+        a = "你好" - 0;
+
+        a = 123 - "你好";
+
+        a = true - 5;     //-4
+
+
+        a = true - 0;    //1
+
+
+        a = false - 0;  //0
+
+        a = true * 1;  // 1
+
+        a = true * "1";   // 1
+
+        a = true * "你好";  //NaN
+
+        a = 1 + +'2' + 3; //6
+        console.log("a=" + a);
+        console.log(typeof a);
+
+
+        var d = 9 % 3;  //0
+
+        d = 9 % 4;  //1 
+
+        d = 9 % 5;  //4
+
+
+        d = +d; //4
+
+        d = -d; //-4
+
+        var result = false;
+
+        d = +result;
+
+        console.log("d=" + d);
+        console.log(typeof d);
+
+
+
+        var c = 10;
+
+        // c = ++c;
+        c = c++;
+
+        console.log("c = " + c);
+        console.log(typeof c);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

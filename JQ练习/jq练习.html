@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        // $("div").hide();
+        //1.等着页面DOM文档加载完毕再去执行JS代码
+        // $(document).ready(function () {
+        //     $("div").hide();
+        // })
+        //2.等着页面DOM加载完毕后再去执行JS代码
+        // $(function () {
+        //     $("div").hide();     
+        // })
+
+        /*jQuery的顶级对象$
+           1. $是jQuery的别称,在代码中可以使用jQuery代替$,但一般为了方便,通常都直接使用$
+            2. $是jQuery的顶级对象 ,相当于原生JavaScript中的window,把元素利用$包装成jQuery对象,就可以调用jQuery的方法
+
+        */
+        // 入口函数
+        jQuery(function () {
+            $('ul li:even').css('color', "red");
+            $('ul li:odd').css('color', "skyblue");
+            $('ul li:first').css('color', "yellow");
+        })
+
+    </script>
+</head>
+
+<body>
+    <div></div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+</body>
+
+</html>

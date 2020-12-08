@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .wrap {
+            width: 300px;
+            margin: 100px auto 0;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+
+        th,
+        td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+        }
+
+        th {
+            background-color: #09c;
+            font: bold 16px "微软雅黑";
+            color: #fff;
+        }
+
+        td {
+            font: 14px "微软雅黑";
+        }
+
+        tbody tr {
+            background-color: #f0f0f0;
+        }
+
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <button id="flg">反选</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="j_cbAll" />
+                    </th>
+                    <th>商品</th>
+                    <th>价钱</th>
+                </tr>
+            </thead>
+            <tbody id="j_tb">
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>iPhone8</td>
+                    <td>8000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>iPad Pro</td>
+                    <td>5000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>iPad Air</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" />
+                    </td>
+                    <td>Apple Watch</td>
+                    <td>2000</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        //获取j_cbAll
+        let j_cbAll = document.querySelector("#j_cbAll");
+        //获取所有的input
+        let j_tbs = document.getElementById("j_tb").querySelectorAll("input");
+        //获取flg
+        let flg = document.getElementById("flg");
+
+
+
+        //全选按钮
+        j_cbAll.onclick = function () {
+
+            for (var i = 0; i < j_tbs.length; i++) {
+
+                j_tbs[i].checked = j_cbAll.checked
+
+            }
+        };
+        //反向全选按钮
+        for (var i = 0; i < j_tbs.length; i++) {
+            //再次进行点击事件
+            j_tbs[i].onclick = function () {
+                // 重新将flag设置为true状态
+                //设置一个旗帜flag 当复选框点击时 flag为true
+                let flag = true;
+                for (var j = 0; j < j_tbs.length; j++) {
+                    //进行判断  判断每一个复选框的选中状态进行取反  
+                    //如果勾选了 则为false 不进行操作,   
+                    //没勾选则为true 旗帜flag设置为false 后面赋值给全选框
+                    if (!j_tbs[j].checked) {
+                        flag = false;
+                        // break;
+                    };
+                    //将旗帜flag赋值给全选   
+                    //如果没有进行判断, 此时flag是true   
+                    //如果进行了判断,此时flag是false
+                    j_cbAll.checked = flag;
+                    //一次循环完毕
+                }
+            }
+        };
+        //复选
+        flg.onclick = function () {
+
+            for (var i = 0; i < j_tbs.length; i++) {
+
+                j_tbs[i].checked = !j_tbs[i].checked;
+                j_tbs[i].onclick();
+
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

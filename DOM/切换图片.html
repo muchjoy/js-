@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <p id="pp"></p>
+        <img src="images/bj1.jpg" alt="" id="img">
+        <br>
+        <button id="btn01">上一站</button>
+        <button id="btn02">下一站</button>
+    </div>
+
+</body>
+<script>
+    let img = document.getElementById("img");
+    let btn01 = document.getElementById("btn01");
+    let btn02 = document.getElementById("btn02");
+    let pp = document.getElementById("pp");
+    let imgArr = ["images/bj1.jpg", "images/bj2.jpg", "images/bj3.jpg", "images/bj4.jpg", "images/bj5.jpg"];
+    let index = 0;
+    pp.innerText = "一共" + imgArr.length + "张图片" + "现在第" + index + "图片"
+    //绑定单击响应函数
+    btn01.onclick = function () {
+        index--;
+        if (index < 0) {
+            index = imgArr.length - 1
+        }
+        img.src = imgArr[index];
+        pp.innerText = "一共" + imgArr.length + "张图片" + "现在第" + index + "图片"
+
+    }
+    btn02.onclick = function () {
+        index++;
+        if (index > imgArr.length - 1) {
+            index = 0;
+
+        }
+        img.src = imgArr[index];
+        pp.innerText = "一共" + imgArr.length + "张图片" + "现在第" + (index + 1) + "图片"
+
+    }
+
+</script>
+
+</html>

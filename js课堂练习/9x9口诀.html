@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 70px;
+            height: 30px;
+            background-color: skyblue;
+            margin: 1px;
+            text-align: center;
+            line-height: 30px;
+            color: #ffffff;
+        }
+
+        span:hover {
+            background-color: pink;
+            transform: scale(1.2);
+
+        }
+    </style>
+    <script>
+        for (var i = 1; i < 10; i++) {
+            for (var j = 1; j <= i; j++) {
+                document.write("<span>" + j + "x" + i + "=" + j * i + "</span>")
+
+            }
+            document.write("<br />")
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

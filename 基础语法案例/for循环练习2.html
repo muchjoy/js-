@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            打印1-100之间所有7的倍数的个数总和
+        */
+        //定义一个变量，求7的倍数数字相加总和
+        var sum = 0;
+        //定义一个7的倍数数字的个数
+        var num = 0;
+        //先输出1-100之间的数
+        for (var i = 1; i <= 100; i++) {
+
+            //输出7的倍数的数字
+            if (i % 7 == 0) {
+                // console.log(i)
+
+                sum += i;
+                num++;
+
+            }
+        }
+        console.log('所有7的倍数总和' + sum);
+        console.log(num);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

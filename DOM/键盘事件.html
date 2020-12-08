@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+<script>
+    let box = document.getElementById("box");
+    //定义一个变量保存键盘按下得方向
+    let eke = 0
+    // console.log(eke)
+    let timer;
+    //定时器
+    setInterval(function () {
+        let sudu = 10;
+        // box.style.transition = "all 1s"
+        switch (eke) {
+            case 37:
+                box.style.left = box.offsetLeft - sudu + "px"
+                break;
+            case 38:
+                box.style.top = box.offsetTop - sudu + "px"
+                break;
+            case 39:
+                box.style.left = box.offsetLeft + sudu + "px"
+                break;
+            case 40:
+                box.style.top = box.offsetTop + sudu + "px"
+                break;
+
+        }
+    }, 30);
+    //绑定键盘事件
+    document.onkeydown = function (event) {
+        // console.log(event.keyCode)
+        eke = event.keyCode
+        // console.log(eke)
+
+
+    }
+    document.onkeyup = function () {
+        eke = 0;
+    }
+</script>
+
+</html>

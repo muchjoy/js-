@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>添加删除记录练习</title>
+	<link rel="stylesheet" type="text/css" href="ex_2_style/css.css" />
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#employeeTable {
+			width: 400px;
+			height: 150px;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+
+	<table id="employeeTable">
+
+		<tr>
+			<th>姓名</th>
+			<th>科目</th>
+			<th>成绩</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>JavaScript</td>
+			<td>80</td>
+			<td><a href="javascript:;">删除</a></td>
+		</tr>
+		<tr>
+			<td>Jerry</td>
+			<td>JavaScript</td>
+			<td>90</td>
+			<td><a href="javascript:;">删除</a></td>
+		</tr>
+		<tr>
+			<td>Bob</td>
+			<td>JavaScript</td>
+			<td>95</td>
+			<td><a href="javascript:;">删除</a></td>
+		</tr>
+	</table>
+
+	<div id="formDiv">
+
+		<h4>添加新同学成绩</h4>
+
+		<table>
+			<tr>
+				<td class="word">名字: </td>
+				<td class="inp">
+					<input type="text" name="empName" id="empName" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">科目: </td>
+				<td class="inp">
+					<input type="text" name="email" id="email" />
+				</td>
+			</tr>
+			<tr>
+				<td class="word">成绩: </td>
+				<td class="inp">
+					<input type="text" name="salary" id="salary" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<button id="addEmpButton" value="abc">
+						提交
+					</button>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+
+</body>
+<script>
+	//定义一个函数用来点击删除
+	function move() {
+		//获取点击时的tr
+		let tr = this.parentNode.parentNode;
+		//获取要被删除的name
+		let name = tr.children[0].innerHTML
+		// console.log(name)
+		let flag = confirm("要删除" + name + "吗");
+		if (flag) {
+			tr.remove();
+		}
+	}
+	//获取tr中的a
+	let allA = document.querySelectorAll("a");
+	//给a添加删除选项,先遍历
+	for (var i = 0; i < allA.length; i++) {
+		allA[i].onclick = move;
+	};
+
+	//获取各个input
+	//empName
+	let empName = document.querySelector("#empName");
+	//email
+	let email = document.querySelector("#email");
+	//salary
+	let salary = document.querySelector("#salary")
+	//addEmpButton
+	let btn = document.getElementById("addEmpButton")
+
+
+	//为提交按钮添加单击事件
+	btn.onclick = function () {
+
+		//获取empName文本内容
+		let empText = empName.value
+		//获取email文本内容
+		let emailText = email.value
+		//获取salary
+		let salaryText = salary.value
+
+		if (empText == "" && emailText == "" && salaryText == "") {
+			alert("请输入完整的内容");
+			return false;
+		} else {
+
+			//设置一个数组用来保存获取到的文本内容
+			let arr = [empText, emailText, salaryText];
+			//创建表格tr
+			let trs = document.createElement("tr");
+
+			for (var i = 0; i < arr.length; i++) {
+				//创建td
+				var td = document.createElement("td");
+				//将数组中的元素添加到td中
+				td.innerHTML = arr[i];
+				// console.log(td)
+				//将td添加到trs中
+				trs.appendChild(td);
+			};
+			//创建一个含有a链接的td
+			let listA = document.createElement("a");
+			let listTd = document.createElement("td");
+			listA.innerHTML = "删除";
+			listA.href = "javascript:;";
+			listTd.appendChild(listA);
+
+			console.log(listA)
+			//将含有a链接的td插入tr
+			trs.appendChild(listTd)
+			//将trs添加到table里
+			//获取table
+			let table = document.querySelector("#employeeTable");
+
+			//将tr添加到table中
+			table.appendChild(trs);
+			//为添加的a调用move函数
+			listA.onclick = move;
+		}
+
+
+
+	};
+
+
+</script>
+
+</html>

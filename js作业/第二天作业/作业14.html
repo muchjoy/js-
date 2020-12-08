@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 水仙花数是指一个 n 位数（这里只考虑三位数）它的每个位上的数字的 n 次幂之和等于它本身。（例如：13 + 5^3+ 3^3 = 153）     
+        // 用户输入一个三位数数判断是否是 水仙花数 （例如用户输入153   1的三次方+5的三次方+3的三次方正好等于153） 
+
+        var num = prompt("请输入一个三位数");
+
+        if (Math.pow(num[0], 3) + Math.pow(num[1], 3) + Math.pow(num[2], 3) == num) {
+            alert("是")
+        } else {
+            alert("不是")
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

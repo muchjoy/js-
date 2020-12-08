@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            let btn = document.querySelector("button")
+            let div = document.querySelector("div");
+            btn.addEventListener("click", function () {
+                btn.disabled = true
+                let num = 3;
+                timer = setInterval(function () {
+                    if (num == 0) {
+                        clearInterval(timer)
+                        num = 3;
+                        btn.disabled = false
+                        location = "首页.html";
+                    } else {
+                        div.innerText = "还剩" + num + "秒跳转页面"
+                        num--;
+                    }
+                }, 1000)
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <button>点我跳转</button>
+    <div></div>
+</body>
+
+</html>

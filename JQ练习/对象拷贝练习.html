@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            //     //要拷贝的目标对象
+            //     let targetObj = {
+            //         id: 0
+            //     };
+            //     //待拷贝的对象
+            //     let obj = {
+            //         id: 1,
+            //         name: "pink",
+            //         msg: {
+            //             age: 18
+            //         }
+            //     };
+            //     //对象拷贝
+            //     $.extend(targetObj, obj);   //会覆盖targetObj里面原来的数据
+            //     console.log($.extend(targetObj, obj));
+            //要拷贝的目标对象
+            let targetObj = {
+                id: 0,
+                msg: {
+                    sex: "男"
+                }
+
+            };
+            //待拷贝的对象
+            let obj = {
+                id: 1,
+                name: "pink",
+                msg: {
+                    age: 18
+                }
+            };
+            //对象拷贝
+            $.extend(true, targetObj, obj);   //会覆盖targetObj里面原来的数据
+            console.log(targetObj);
+        })
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

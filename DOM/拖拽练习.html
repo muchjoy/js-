@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+
+        #box3 {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            position: absolute;
+            top: 150px;
+            left: 150px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            function move(obj) {
+                obj.onmousedown = function (event) {
+                    //兼容IE8
+                    event = event || window.event;
+                    console.log(event);
+                    console.log(this);
+                    console.log(event.target);
+                    //div的偏移量 = 鼠标client - 元素.offset后面元素需要大写
+                    var lt = event.clientX - this.offsetLeft;
+                    var tp = event.clientY - this.offsetTop;
+                    // alert(1)
+                    // console.log(event.clientX)
+                    // console.log(box1.offsetleft)
+                    //为document绑定鼠标拖动事件
+                    document.onmousemove = function (event) {
+                        event = event || window.event
+                        var left = event.clientX - lt;
+                        var top = event.clientY - tp;
+
+                        obj.style.left = left + "px";
+                        obj.style.top = top + "px";
+                    };
+
+                    //为document绑定鼠标松开时的事件
+                    document.onmouseup = function () {
+                        //鼠标松开时,取消鼠标移动
+                        document.onmousemove = null;
+                        //同时取消鼠标按下时触发事件
+                        document.onmouseup = null;
+
+                    };
+
+                }
+            };
+
+            //获取id为box的元素
+            var box1 = document.getElementById("box1");
+            //鼠标按下时触发事件
+            //先为盒子绑定鼠标按下事件
+            box1.onmousedown = function (event) {
+                //兼容IE8
+                event = event || window.event;
+                //div的偏移量 = 鼠标client - 元素.offset后面元素需要大写
+                var lt = event.clientX - box1.offsetLeft;
+                var tp = event.clientY - box1.offsetTop;
+                // alert(1)
+                // console.log(event.clientX)
+                // console.log(box1.offsetleft)
+                //为document绑定鼠标拖动事件
+                document.onmousemove = function (event) {
+                    event = event || window.event
+                    var left = event.clientX - lt;
+                    var top = event.clientY - tp;
+
+                    box1.style.left = left + "px";
+                    box1.style.top = top + "px";
+                };
+
+                //为document绑定鼠标松开时的事件
+                document.onmouseup = function () {
+                    //鼠标松开时,取消鼠标移动
+                    document.onmousemove = null;
+                    //同时取消鼠标按下时触发事件
+                    document.onmouseup = null;
+
+                };
+            };
+            //获取box2
+            var box2 = document.getElementById("box2")
+            move(box2);
+            var box3 = document.getElementById("box3")
+            move(box3);
+
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="box1">
+
+    </div>
+    <div id="box2">
+
+    </div>
+    <div id="box3">
+
+    </div>
+</body>
+
+</html>

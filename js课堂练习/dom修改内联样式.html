@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <button id="btn02">获取样式数据</button>
+    <div id="box"></div>
+</body>
+<script>
+    //获取按钮
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    var btn02 = document.getElementById("btn02");
+    btn.onclick = function () {
+        box.style.width = "300px"
+        box.style.height = "300px"
+        box.style.backgroundColor = "pink"
+        box.style.borderRadius = "150px"
+        box.style.transition = "all 1s"
+    };
+    btn02.onclick = function () {
+        // 兼容IE8和普通浏览器
+        function getStyle(obj, name) {
+            if (window.getComputedStyle) {
+                return getComputedStyle(box, null)[name];
+            } else {
+                return box.currentStyle[name];
+            }
+        };
+        var w = getStyle(box, "width");
+        var h = getStyle(box, "height");
+        var b = getStyle(box, "backgroundColor");
+        // var h = getStyle(box, "height");
+
+        alert(w + "\n" + h + "\n" + b);
+    };
+</script>
+
+</html>

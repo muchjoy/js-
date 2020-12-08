@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="username"> <input type="checkbox" name="" id="remember"> 记住用户名
+    <script>
+        var username = document.querySelector('#username');
+        var remember = document.querySelector('#remember');
+        //判断里面是否有值
+        if (localStorage.getItem('nusername')) {
+            //如果有值则将值赋值给文本框
+            username.value = localStorage.getItem('nusername');
+            remember.checked = true
+        };
+        //保存值 
+        remember.addEventListener("change", () => {
+            if (remember.checked) {
+                localStorage.setItem('username', username.value);
+
+            } else {
+                localStorage.removeItem();
+
+            }
+        })
+    </script>
+</body>

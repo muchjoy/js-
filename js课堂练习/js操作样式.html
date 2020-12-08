@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>点我呀</button>
+    <div id="box"></div>
+
+</body>
+<script>
+    let btn = document.querySelector("button");
+    let box = document.querySelector("#box");
+    // console.log(box)
+    //单击响应函数
+    btn.onclick = function () {
+        box.className = "box"
+    };
+    //鼠标按下响应函数
+    box.onmousedown = function (event) {
+        // alert(1)
+        //div的偏移量
+        let lt = event.clientX - this.offsetLeft;
+        let tp = event.clientY - this.offsetTop;
+        console.log(tp)
+        //鼠标移动事件
+        document.onmousemove = function (event) {
+            let left = event.clientX - lt;
+            let top = event.clientY - tp;
+
+
+            box.style.left = left + "px";
+            box.style.top = top + "px";
+        };
+        //鼠标松开事件
+        document.onmouseup = function () {
+            document.onmousemove = null;
+            document.onmouseup = null;
+        }
+
+
+
+
+    }
+</script>
+
+</html>

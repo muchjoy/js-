@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*  
+       
+            2.打印出1-100之间所有的质数
+
+            
+        */
+        //2-100之间所有的数
+        for (var i = 2; i <= 100; i++) {
+
+            //创建一个旗帜
+            var flag = true
+
+            //2-i之间所有的数
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    //i一定不是质数
+                    flag = false;
+                }
+            }
+
+            if (flag) {
+                console.log(i)
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

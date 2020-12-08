@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        .box2 {
+            position: absolute;
+            top: 150px;
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+        }
+
+        .box3 {
+            position: absolute;
+            top: 300px;
+
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+
+        .box4 {
+            position: absolute;
+            top: 450px;
+
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //获取div btn
+            let div = document.querySelector("div")
+            let div2 = document.querySelector(".box2")
+            let div3 = document.querySelector(".box3")
+            let div4 = document.querySelector(".box4")
+
+            let btn = document.querySelector("button")
+
+            btn.addEventListener("click", function () {
+                setInterval(function () {
+                    move(div, "width", 500, 30, function () {
+                        move(div, "width", 0, 30, function () {
+                            move(div, "width", 600, 30, function () {
+                                move(div, "width", 0, 30, function () {
+                                    move(div, "width", 800, 30, function () {
+
+                                    })
+                                })
+                            })
+                        })
+                    })
+                    move(div2, "width", 700, 20, function () {
+                        move(div2, "width", 0, 20, function () {
+                            move(div2, "width", 400, 20, function () {
+                                move(div2, "width", 0, 20, function () {
+                                    move(div2, "width", 500, 50, function () {
+
+                                    })
+                                })
+                            })
+                        })
+                    })
+                    move(div3, "width", 900, 50, function () {
+                        move(div3, "width", 0, 50, function () {
+                            move(div3, "width", 400, 40, function () {
+                                move(div3, "width", 0, 30, function () {
+                                    move(div3, "width", 800, 50, function () {
+
+                                    })
+                                })
+                            })
+                        })
+                    })
+                    move(div4, "width", 100, 10, function () {
+                        move(div4, "width", 0, 10, function () {
+                            move(div4, "width", 900, 10, function () {
+                                move(div4, "width", 0, 50, function () {
+                                    move(div4, "width", 900, 50, function () {
+
+                                    })
+                                })
+                            })
+                        })
+                    })
+
+                }, 1000)
+            });
+            function animate(obj, target) {
+                clearInterval(obj.timer)
+                let sped = (target - obj.offsetLeft) / 10
+                obj.timer = setInterval(function () {
+                    if (obj.offsetLeft == target) {
+                        clearInterval(obj.timer)
+                    }
+                    obj.style.left = obj.offsetLeft + sped + "px"
+                }, 30)
+            }
+        }
+    </script>
+    <script src="move.js"></script>
+</head>
+
+<body>
+    <button>点我</button>
+    <div></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+
+</html>

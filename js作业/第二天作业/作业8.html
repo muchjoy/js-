@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 抽奖活动 幸运数字是6  用户有三次机会  三次之内输入6 则提示恭喜中奖不在弹出，三次都没成功 则失败
+
+
+        // var n1 = prompt("请输入数字")
+        // var n2 = prompt("请输入数字")
+        // var n3 = prompt("请输入数字")
+
+        // if (n1 == 6 || n2 == 6 || n3 == 6) {
+        //     alert("恭喜中奖");
+        // } else {
+        //     alert("失败");
+        // }
+
+        var num1 = prompt("第一次");
+
+        if (num1 == 6) {
+            alert("OK");
+        } else {
+            alert("请在继续输入")
+            var num2 = prompt("第二次");
+            if (num2 == 6) {
+                alert("OK");
+            } else {
+                alert("请在继续输入")
+                var num3 = prompt("第三次");
+                if (num3 == 6) {
+                    alert("OK");
+                } else {
+                    alert("没机会");
+                }
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

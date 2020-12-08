@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 弹出prompt 输入框，让用户输入年份，把这个值取过来保存到变量中
+        // （能被4整除且不能整除100的为闰年（如2004年就是闰年，1901年不是闰年）或者能够被 400 整除的就是闰年  不会的看下课上案例！）
+
+        var year = +prompt("请输入年份");
+
+        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
+            alert("闰年");
+        } else {
+            alert("平年");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

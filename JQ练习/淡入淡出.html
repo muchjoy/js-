@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 300px;
+            background-color: pink;
+            display: none;
+        }
+    </style>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            //单击淡入
+            $("button").eq(0).click(function () {
+                $('div').fadeIn(500)
+            })
+            //单击淡出
+            $("button").eq(1).click(function () {
+                $('div').fadeOut(500)
+            })
+            //单击淡入
+            $("button").eq(2).click(function () {
+                $('div').fadeToggle(500)
+            })
+            //修改透明度
+            $("button").eq(3).click(function () {
+                $("div").fadeTo(500, .5);
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <button>淡入</button>
+    <button>淡出</button>
+    <button>淡入淡出切换</button>
+    <button>修改透明度</button>
+    <br>
+    <div></div>
+</body>
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99"
+    src="https://files.cnblogs.com/files/yzl0/canvas-nest.js"></script>
+
+</html>

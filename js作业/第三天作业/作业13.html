@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 13.（打印1-100之间的质数）
+
+        // 质数：  只有1和本身整除例如（2,3,5,7,11,13,17.。。。）； 
+
+        for (var i = 2; i <= 100; i++) {
+            // 创建一个旗帜
+            var flag = true;
+
+            for (var j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    // 进入这里就一定不是质数
+                    flag = false;
+                };
+
+            };
+
+            if (flag) {
+                console.log(i)
+            }
+
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

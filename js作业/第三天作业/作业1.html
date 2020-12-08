@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 1.求1-100之间3与7的倍数的总和与平均值
+
+        var sum = 0;
+        var sum2 = 0;
+        for (var i = 1; i <= 100; i++) {
+            if (i % 3 == 0 && i % 7 == 0) {
+                sum += i
+                sum2++;
+            }
+        }
+
+        console.log(sum)
+        console.log(sum2);
+        var agv = sum / sum2;
+        console.log(agv);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

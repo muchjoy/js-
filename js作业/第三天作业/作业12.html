@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 12 var str = "1,2,3,4,5"; 求字符串的总和  最大值  最小值 
+        var str = "1,2,3,4,5,2,8,7";
+        // var num = str.split(",");
+        // console.log(num)
+        var sum = "";
+        for (var i = 0; i < str.length; i += 2) {
+            // console.log(str[i]);
+            sum += +str[i]
+
+
+        }
+        console.log(sum);
+        var res = 0;
+        var max = 0;
+        var min = +sum[0];
+        for (var i = 0; i < sum.length; i++) {
+            res += +sum[i]
+            if (sum[i] > max) {
+                max = +sum[i]
+            }
+            if (sum[i] < min) {
+                min = +sum[i]
+            }
+
+        }
+        console.log(res, max, min)
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

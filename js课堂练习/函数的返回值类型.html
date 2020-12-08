@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun1() {
+            function fun2() {
+                alert("1");
+
+            }
+            return fun2();  //fun2的返回值数undefined
+        };
+        console.log(fun1())   //unfefinedd
+
+        // function fun1() {
+        //     function fun2() {
+        //         alert("1");
+
+        //     }
+        //     return fun2;  //fun2() 的返回值数undefined
+        // };
+        // console.log(fun1())   //fun2函数
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

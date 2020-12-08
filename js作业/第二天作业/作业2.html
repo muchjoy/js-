@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 判断时间阶段。  比如 用户输入12点 弹出 中午好 用户输入 18点 弹出傍晚好 用户输入 23点  弹出深夜好
+
+        var time = +prompt('请输入时间');
+        switch (time) {
+            case 12:
+                alert("中午好");
+                break;
+            case 18:
+                alert("傍晚好");
+                break;
+            case 23:
+                alert("深夜好");
+                break;
+            default:
+                alert("请输入整点");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

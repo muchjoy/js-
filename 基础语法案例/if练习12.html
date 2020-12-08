@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*输入一个三位数，如果是水仙花数，输出YES，否则的话，输出NO;所谓的水仙花数是指 每一位的数字立方和等于这位数本身。例如 153 = 13+53+33
+        */
+
+        var a = +prompt("输入一个三位数");
+
+        num1 = parseInt(a / 100);   //百位
+        console.log(num1)
+        // console.log(parseInt(num1));
+        num2 = parseInt((a % 100) / 10);
+        console.log(num2);
+        num3 = parseInt(a % 10);
+        console.log(num3);
+
+        num = Math.pow(num1, 3) + Math.pow(num2, 3) + Math.pow(num3, 3)
+        console.log(num)
+        console.log(a)
+        if (a != 0 && a == num) {
+            alert("yes");
+        } else {
+            alert("no");
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

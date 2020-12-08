@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //         15. 用户输入一个数与随机数匹配 三次机会（如果第一次匹配成功返回ok 否则提示继续输入 如果第二次成功 返回第二次输入ok 否则 再次输入 如果第三次成功  否则提示没机会了
+        //   （随机生成1-10之间的数 Math.floor(Math.random() * 10 + 1)（大家把这个代码复制下就会产生1-10之间的随机数））
+
+        var num1 = prompt("第一次");
+
+        if (num1 == Math.floor(Math.random() * 10 + 1)) {
+            alert("OK");
+        } else {
+            alert("请在继续输入")
+            var num2 = prompt("第二次");
+            if (num2 == Math.floor(Math.random() * 10 + 1)) {
+                alert("OK");
+            } else {
+                alert("请在继续输入")
+                var num3 = prompt("第三次");
+                if (num3 == Math.floor(Math.random() * 10 + 1)) {
+                    alert("OK");
+                } else {
+                    alert("没机会");
+                }
+
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

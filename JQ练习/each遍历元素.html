@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jQuery.js"></script>
+    <script>
+        $(function () {
+            $("div").each(function (index, domEle) {
+                // console.log(domEle)
+                $(domEle).css({
+                    width: 100,
+                    height: 100,
+                    backgroundColor: "pink"
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+</body>
+
+</html>

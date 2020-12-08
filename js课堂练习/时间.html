@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #cccc;
+        }
+
+        .box {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background: url(images/clock.png) no-repeat center center;
+            background-color: white;
+            border: 3px solid #555;
+        }
+
+        .box::before {
+            position: absolute;
+            top: calc(50% - 5px);
+            left: calc(50% - 5px);
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: black;
+
+        }
+
+        .box .hour,
+        .box .min,
+        .box .sec {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box .hour,
+        .hr {
+            width: 150px;
+            height: 150px;
+
+        }
+
+
+
+        .box .min,
+        .mn {
+            width: 180px;
+            height: 180px;
+
+
+        }
+
+        .box .sec,
+        .sc {
+            width: 220px;
+            height: 220px;
+
+
+        }
+
+        .hr,
+        .mn,
+        .sc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .hr::before {
+            content: "";
+            height: 75px;
+            width: 8px;
+            background-color: rgba(0, 0, 0, .5);
+            border-radius: 4px;
+            transform: translateY(-35px);
+        }
+
+        .mn::before {
+            content: "";
+            height: 90px;
+            width: 6px;
+            background-color: rgba(0, 0, 0, .4);
+            border-radius: 4px;
+            transform: translateY(-35px);
+        }
+
+        .sc::before {
+            content: "";
+            height: 120px;
+            width: 4px;
+            background-color: rgba(0, 0, 0, .3);
+            border-radius: 4px;
+            transform: translateY(-35px);
+            transform: rotate();
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+</body>
+<script>
+    //获取hr mn sc
+    // var deg = 6;
+    var hr = document.getElementById("hr");
+    var mn = document.getElementById("mn");
+    var sc = document.getElementById("sc");
+
+    function getDate() {
+        //创建一个时间函数
+        var date = new Date();
+        var hh = date.getHours() * 30;    //24*15 =360
+        var mm = date.getMinutes() * 6;   //60*6 = 360
+        var ss = date.getSeconds() * 6;
+        // console.log(mm)
+
+
+
+        hr.style.transform = 'rotate(' + hh + 'deg)';
+        mn.style.transform = 'rotate(' + mm + 'deg)';
+        sc.style.transform = 'rotate(' + ss + 'deg)';
+    };
+    // 每隔1000毫秒就调用函数
+    setInterval("getDate()", 1000);
+
+</script>
+
+</html>

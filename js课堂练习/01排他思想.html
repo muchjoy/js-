@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button:hover {
+            background-color: chartreuse;
+        }
+    </style>
+</head>
+
+<body>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+    <button>点击</button>
+</body>
+<script>
+    //获取button按钮
+    let btn = document.querySelectorAll("button");
+    //遍历
+    for (let i = 0; i < btn.length; i++) {
+        //为每一个button绑定单击事件
+        btn[i].onclick = function () {
+
+            for (let i = 0; i < btn.length; i++) {
+                //把每一个button的背景颜色都设置为空的
+                btn[i].style.backgroundColor = ""
+            };
+            // 只有触发事件的按钮才会变颜色
+            this.style.backgroundColor = "skyblue";
+        };
+
+    }
+</script>
+
+</html>

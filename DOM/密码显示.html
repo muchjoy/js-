@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: relative;
+            width: 400px;
+            border-bottom: 1px solid #cccccc;
+            margin: 50px auto;
+        }
+
+        div input {
+            width: 370px;
+            height: 30px;
+            border: 0;
+            outline: none;
+        }
+
+        img {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            width: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label><img src="images/close.png" alt="" id="img"></label>
+        <input type="password" id="pwd">
+    </div>
+</body>
+<script>
+    let pwd = document.getElementById("pwd");
+    let img = document.getElementById("img");
+    let flag = true;
+    img.onclick = function () {
+        if (flag) {
+            pwd.type = "text";
+            this.src = "images/open.png"
+            flag = false;
+        } else {
+            pwd.type = "password";
+            this.src = "images/close.png"
+            flag = true;
+        }
+    }
+</script>
+
+</html>

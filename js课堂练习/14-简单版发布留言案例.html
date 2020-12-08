@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            padding: 100px;
+        }
+
+        textarea {
+            width: 200px;
+            height: 100px;
+            border: 1px solid pink;
+            outline: none;
+            resize: none;
+        }
+
+        ul {
+            margin-top: 50px;
+        }
+
+        li {
+            width: 300px;
+            padding: 5px;
+            background-color: rgb(245, 209, 243);
+            color: red;
+            font-size: 14px;
+            margin: 15px 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <textarea name="" id=""></textarea>
+    <button>发布</button>
+    <ul>
+
+    </ul>
+    <script>
+        //获取textarea
+        let text = document.querySelector("textarea");
+        // console.log(text)
+        //获取btn按钮
+        let btn = document.querySelector("button");
+        //获取ul
+        let ul = document.querySelector("ul");
+
+        btn.onclick = function () {
+            if (text.value == '') {
+                alert("请输入内容");
+                return;
+            } else {
+                //创建li
+                let li = document.createElement("li");
+                //添加内容
+                li.innerText = text.value;
+                //将li添加到ul
+                ul.appendChild(li)
+                //滑动变色
+                li.onmouseover = function () {
+                    li.style.backgroundColor = "pink"
+                };
+                li.onmouseout = function () {
+                    li.style.backgroundColor = "skyblue"
+
+                };
+                //双击隐藏
+                li.ondblclick = function () {
+                    li.style.display = "none"
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

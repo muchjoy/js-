@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [1, 3, 6, 4, 9];
+        // var num = 0;
+        // for (var i = 0; i < arr.length - 1; i++) {
+        //     for (var j = 0; j < arr.length - i - 1; j++) {
+        //         if (arr[j] < arr[j + 1]) {
+        //             num = arr[j + 1];
+        //             arr[j + 1] = arr[j];
+        //             arr[j] = num;
+        //         }
+        //     }
+        // }
+        // console.log(arr)
+
+
+        //回调函数
+        /*  arr.sort(function (a, b) {
+             return b - a;
+         })
+         document.write(arr);
+  */
+
+        var res = 0;
+        for (var i = 0; i < arr.length - 1; i++) {
+            for (var j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    res = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = res;
+                }
+            }
+
+        }
+        console.log(arr)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

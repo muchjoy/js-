@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var score = prompt('请输入成绩');
+        if (isNaN(score) || score > 100 || score < 0) {
+            alert('请重新输入')
+        } else {
+            if (score >= 90) {
+                alert('你超棒');
+            } else if (score >= 80) {
+                alert('你真棒');
+            } else if (score >= 60) {
+                alert('你一般般');
+            } else {
+                alert('皮带肉丝')
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

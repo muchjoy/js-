@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+           一元运算符, 只需要一个操作数
+           +   正号
+
+           -    负号
+
+           对于非Number值  
+                它先转换为Number 然后在运算
+           */
+
+
+        var a = 123;
+        a = +a;
+        a = -a;
+
+
+        a = "12";
+        a = +a;
+
+        // 对于非Number值  
+        // 它先转换为Number 然后在运算
+
+        a = 1 + +"2" + 3;
+        console.log("a=" + a);
+        console.log(typeof a);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

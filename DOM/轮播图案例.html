@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="move.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #outer {
+            position: relative;
+            width: 520px;
+            height: 333px;
+            margin: 50px auto;
+            background-color: pink;
+            padding: 10px 0;
+            overflow: hidden;
+        }
+
+        #imgList {
+            list-style: none;
+            position: absolute;
+            left: 0;
+        }
+
+        #imgList li {
+            float: left;
+            margin: 0 10px;
+        }
+
+        #nav {
+            position: absolute;
+            top: 320px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #nav a {
+            float: left;
+            width: 15px;
+            height: 15px;
+            border-radius: 15px;
+            background-color: skyblue;
+            margin: 0 5px;
+            /* 透明 */
+            opacity: .5;
+        }
+
+        #nav a:hover {
+            background-color: black;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            //获取imgList
+            let imgList = document.getElementById("imgList");
+            //获取所有得img标签
+            let imgArr = document.getElementsByTagName("img");
+            // console.log(imgArr.length)
+            //设置imgList得宽度
+            imgList.style.width = 520 * imgArr.length + "px";
+            //获取所有得a
+            let allA = document.getElementsByTagName("a");
+            //设置图片显示得索引
+            let index = 0;
+            //设置默认选中得效果
+            allA[index].style.backgroundColor = "black";
+
+
+            //为所有得超链接绑定单击响应函数
+            for (var i = 0; i < allA.length; i++) {
+                /*for循环会在页面加载完成之后立即执行
+                而响应函数会在超链接被点击时才执行
+                当响应函数执行时, for循环早已执行完毕*/
+                //为每一个超链接都添加一个num属性,用来保存索引
+                allA[i].num = i
+                // console.log(allA[i].num)
+                allA[i].onclick = function () {
+                    //获取点击超链接得索引,并将设置为index
+                    index = this.num;
+                    //调用setA(),修改背景颜色
+                    setA();
+                    //切换图片  -520*index
+                    // imgList.style.left = -520 * index + "px";
+                    //使用move构造函数,为图片加入切换动画
+                    move(imgList, "left", -520 * index, 20, function () {
+
+                    });
+                };
+                //清除定时器
+                allA[i].onmouseover = function () {
+                    clearInterval(timer);
+
+
+                };
+                allA[i].onmouseout = function () {
+                    timeMove();
+                }
+
+            };
+
+            //调用定时器函数,让图片动起来
+            timeMove();
+
+            //设置底部按钮背景颜色
+            function setA() {
+                //判断是否时最后一个索引
+                if (index >= imgArr.length - 1) {
+                    index = 0
+                    //设置ul的left为0,让图片回到初始位置
+                    imgList.style.left = 0 + "px"
+                }
+                //遍历所有a,并将他们得背景颜色设置为空的,这样会用css样式中的颜色
+                for (var i = 0; i < allA.length; i++) {
+                    allA[i].style.backgroundColor = "";
+                };
+                //将选中得a改为黑色,行内样式权重大于内联样式
+                allA[index].style.backgroundColor = "black"
+
+            };
+
+            //定时器函数
+            // let timer;
+            function timeMove() {
+                timer = setInterval(function () {
+
+                    index++;
+                    //判断,index大于时imgArr.length时
+                    index %= imgArr.length;
+                    //调用move动画函数
+                    move(imgList, "left", -520 * index, 20, function () {
+                        setA();
+                    });
+                }, 3000);
+            }
+
+        };
+    </script>
+</head>
+
+<body>
+    <div id="outer">
+        <ul id="imgList">
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+            <li><img src="images/4.jpg" alt=""></li>
+            <li><img src="images/5.jpg" alt=""></li>
+            <li><img src="images/1.jpg" alt=""></li>
+
+
+        </ul>
+        <div id="nav">
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+        </div>
+    </div>
+</body>
+
+</html>

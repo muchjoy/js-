@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div></div>
+</body>
+<script>
+    let div = document.querySelector("div");
+    let str = location.search.substr(1);
+    let arr = str.split("=");
+    div.innerHTML = arr[1] + "欢迎你";
+</script>
+
+</html>

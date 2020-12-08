@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">点一下</button>
+    <div class="box" id="box"></div>
+</body>
+<script>
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box")
+    btn.onclick = function () {
+        box.style.width = "200px";
+        box.style.height = "200px"
+        box.backgroundColor = "pink"
+        box.style.transition = "all 1s"
+        btn.style.display = "none"
+    }
+</script>
+
+</html>

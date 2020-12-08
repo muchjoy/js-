@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            width: 500px;
+            margin: 100px auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+        }
+
+        thead tr {
+            height: 40px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <table cellspacing="0">
+
+    </table>
+    <script>
+        // 1.先去准备好学生的数据
+        var datas = [{
+            name: '魏璎珞',
+            subject: 'JavaScript',
+            score: 100
+        }, {
+            name: '弘历',
+            subject: 'JavaScript',
+            score: 98
+        }, {
+            name: '傅恒',
+            subject: 'JavaScript',
+            score: 99
+        }, {
+            name: '明玉',
+            subject: 'JavaScript',
+            score: 88
+        }, {
+            name: '大猪蹄子',
+            subject: 'JavaScript',
+            score: 0
+        }];
+        //创建thead
+        let thead = document.createElement("thead");
+        //获取table
+        let table = document.querySelector("table");
+
+        //创建一个数组用来放表格头部元素
+        let arr = ['姓名', '科目', '成绩', '操作'];
+        //创建tr
+        let tr = document.createElement("tr");
+        for (var i = 0; i < arr.length; i++) {
+            //创建th
+            var th = document.createElement("th");
+            th.innerText = arr[i];
+            //将th添加到tr中
+            tr.appendChild(th)
+
+        };
+        //将thead添加到table中
+        table.appendChild(thead);
+        //将tr添加到thead
+        thead.appendChild(tr);
+
+        //创建tbody
+        let tbody = document.createElement("tbody");;
+        //将tbody添加到table中
+        table.appendChild(tbody)
+
+        //创建tr
+        for (var i = 0; i < datas.length; i++) {
+            //创建tr
+            var trs = document.createElement("tr");
+            //将trs添加到tbody中
+            tbody.appendChild(trs)
+
+            //创建td
+            //遍历数组中的对象
+            for (var k in datas[i]) {
+                //创建td
+                var tds = document.createElement("td");
+                // 将td插入到trs中
+                tds.innerText = datas[i][k]
+                //将tds放入trs中
+                trs.appendChild(tds);
+            };
+            //创建td
+            let td = document.createElement("td");
+            //创建a
+            let a = document.createElement("a");
+            a.href = "#"
+            a.innerHTML = "删除"
+            td.appendChild(a);
+            trs.appendChild(td);
+            a.onclick = move;
+        };
+
+
+        //定义一个函数用来点击删除
+        function move() {
+            //获取点击时的tr
+            let tr = this.parentNode.parentNode;
+            //获取要被删除的name
+            let name = tr.children[0].innerHTML
+            // console.log(name)
+            let flag = confirm("要删除" + name + "吗");
+            if (flag) {
+                tr.remove();
+            }
+        };
+
+
+    </script>
+</body>
+
+</html>

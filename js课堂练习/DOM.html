@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div id="box1">
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+    <div class="box2"></div>
+</body>
+<script>
+    // let box1 = document.getElementById("box1");
+    // let box2 = document.getElementsByClassName("box2")[0];
+    // let box = document.getElementsByTagName("div")[0];
+    // console.log(box)
+    // console.log(box1);
+    // console.log(box2);
+    // let box1 = document.querySelector("#box1");
+    // let div = document.querySelector("div");
+    // let box2 = document.querySelector(".box2");
+    // let p = document.querySelectorAll("p");//伪数组
+    // let div2 = document.getElementsByTagName("div")[1];
+    // let p2 = div2.getElementsByTagName("P")
+    // console.log(p2);
+    let box1 = document.getElementById("box1");
+    let p = box1.querySelector("p")
+    box1.onclick = function () {
+        alert(1)
+    }
+
+
+</script>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let btn = document.querySelector("button");
+            let box = document.querySelector("#box")
+
+            btn.onclick = function () {
+                clearInterval(timer)
+                let speed = 5
+                let timer = setInterval(function () {
+
+                    if (box.offsetLeft >= 400) {
+                        clearInterval(timer)
+                    }
+                    box.style.left = box.offsetLeft + speed + "px"
+                }, 30)
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <button>点我以下</button>
+    <div id="box"></div>
+</body>
+
+</html>

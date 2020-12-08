@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let box = document.querySelector("div");
+            //绑定鼠标单击
+            box.onmousedown = function (e) {
+                var leftX = e.pageX - box.offsetLeft;
+                var leftY = e.pageY - box.offsetTop;
+
+                document.addEventListener("mousemove", function (e) {
+
+
+                    let x = e.pageX - leftX;
+                    console.log(x)
+                    let y = e.pageY - leftY;
+                    console.log(y)
+
+                    box.style.left = x + "px"
+                    box.style.top = y + "px"
+                })
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

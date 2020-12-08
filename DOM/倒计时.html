@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #aaaaaa;
+        }
+
+        .box {
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+            height: 500px;
+            margin: 100px auto;
+            background-color: white;
+        }
+
+        .hour,
+        .min,
+        .sec {
+
+            width: 250px;
+            height: 400px;
+            background-color: black;
+
+
+
+        }
+
+        .hr,
+        .mn,
+        .sc {
+            color: white;
+            font-size: 200px;
+            text-align: center;
+            line-height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
+        </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
+        </div>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
+</body>
+<script>
+    let hr = document.getElementById("hr");
+    let mn = document.getElementById("mn");
+    let sc = document.getElementById("sc");
+    setInterval(() => {
+        let date = +new Date();
+        let times = +new Date('2020-8-1 18:00:00');
+        let now = (times - date) / 1000;
+        let h = parseInt(now / 60 / 60 % 24);
+        h = h < 10 ? "0" + h : h;
+        let m = parseInt(now / 60 % 60);
+        m = m < 10 ? "0" + m : m;
+
+        let s = parseInt(now % 60);
+        s = s < 10 ? "0" + s : s;
+
+        hr.innerHTML = h;
+        mn.innerHTML = m;
+        sc.innerHTML = s;
+    })
+
+
+</script>
+
+</html>

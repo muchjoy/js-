@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 分数转换,给一个分数，判定等级。大于等于90  A，大于等于80小于90  B，大于等于70小于80  C ，大于等于60小于70 D，小于60 E
+        // （用switch来做不用判断怎么做呢？各位老总希望别写100个case判断想下？）
+
+        var score = prompt("请输入分数");
+        n1 = parseInt(score / 10);
+
+        switch (n1) {
+            case 10:
+                alert("A");
+                break;
+            case 9:
+                alert("A");
+                break;
+            case 8:
+                alert("B");
+                break;
+            case 7:
+                alert("C");
+                break;
+            case 6:
+                alert("D");
+                break;
+            default:
+                alert("E");
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
